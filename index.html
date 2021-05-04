@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O-Trio by Tahir</title>
+    <link rel="stylesheet" href="otrioStyle.css">
+</head>
+<body>
+    <!-- Declare the pieces to be manipulated from the DOM -->
+    <img src="Images/ring_blue.png" id="blueRing" onclick="dragStart(event)" alt="blueRing">
+    <img src="Images/ring_red.png" id="redRing" onclick="dragStart(event)" alt="redRing">
+    <img src="Images/ring_yellow.png" id="yellowRing" onclick="dragStart(event)" alt="yellowRing">
+    <img src="Images/ring_green.png" id="greenRing" onclick="dragStart(event)" alt="greenRing">
+    <img src="Images/dot_red.png" id="redDot" onclick="dragStart(event)" alt="redDot">
+    <img src="Images/dot_blue.png" id="blueDot" onclick="dragStart(event)" alt="blueDot">
+    <img src="Images/dot_yellow.png" id="yellowDot" onclick="dragStart(event)" alt="yellowDot">
+    <img src="Images/dot_green.png" id="greenDot" onclick="dragStart(event)" alt="greenDot">
+    <h1><u>O-TRIO</u></h1>
+    
+    <!-- Various forms used such as number and names of players -->
+    <div id="formDiv">
+        <!-- Number of Players -->
+        <div id="playerNumber" class="box">
+            <form onsubmit="submitNumbers()">
+                <h3>Select number of players</h3>
+                <input type="radio" id="radioTwo" name="radio" value="radioTwo" required></input>
+                <label for="radioTwo">2</label>
+                <input type="radio" id="radioThree" name="radio" value="radioThree"></input>
+                <label for="radioThree">3</label>
+                <input type="radio" id="radioFour" name="radio" value="radioFour"></input>      
+                <label for="radioFour">4</label>
+                <br>              
+                <input type="submit" value="Next"></input>
+            </form>
+            <hr/>
+            <a href="HowToPlay.html" target="_blank"><button class="howToPlay">How To Play</button></a>
+        </div>
+        
+        <!-- 2 Player form -->
+        <div id="twoPform" class="hideDiv">
+            
+            <form onsubmit="submitForm2p()">
+                <!-- Player 1 -->
+                <div class="nameInput">
+                    <img src="Images/dot_blue.png" width="50px" style="padding: 5px;"></img>
+                    <img src="Images/dot_yellow.png" width="50px" style="padding: 5px;"></img>
+                    <div>
+                        <label for="p1name">Player one's name:</label><hr/>
+                        <input type="text" id="p1name" name="p1name" maxlength="26" value="Player 1" required><br/>
+                    </div>
+                </div>
+                <!-- Player 2 -->
+                <div class="nameInput">
+                    <img src="Images/dot_red.png" width="50px" style="padding: 5px;"></img>
+                    <img src="Images/dot_green.png" width="50px" style="padding: 5px;"></img>
+                    <div>
+                        <label for="p2name">Player two's name:</label><hr/>
+                        <input type="text" id="p2name" name="p2name" maxlength="26" value="Player 2" required><br/>
+                    </div>
+                </div>
+                <input type="submit" value="Begin"></input>
+            </form>
+            <hr/>
+            <a href="HowToPlay.html" target="_blank"><button class="howToPlay">How To Play</button></a>
+            </div>    
+    
+        <!-- 3 Player form -->
+        <div id="threePform" class="hideDiv">
+        
+        <form onsubmit="submitForm()">
+            <!-- Blue -->
+            <div class="nameInput">
+                <img src="Images/dot_blue.png" width="50px" style="padding: 5px;"></img>
+                <div>
+                    <label for="bpName">Blue player's name:</label><hr/>
+                    <input type="text" id="bpName" name="bpName" maxlength="26" value="Blue's clues" required><br/>
+                </div>
+            </div>
+            <!-- Red -->
+            <div class="nameInput">
+                <img src="Images/dot_red.png" width="50px" style="padding: 5px;"></img>
+                <div>
+                    <label for="rpName">Red players's name:</label><hr/>
+                    <input type="text" id="rpName" name="rpName" maxlength="26" value="Little red riding hood" required><br/>
+                </div>
+            </div>
+            <!-- Yellow -->
+            <div class="nameInput">
+                <img src="Images/dot_yellow.png" width="50px" style="padding: 5px;"></img>
+                <div>
+                    <label for="ypName">Yellow players's name:</label><hr/>
+                    <input type="text" id="ypName" name="ypName" maxlength="26" value="The Yellow Flash" required><br/>
+                </div>
+            </div>
+            <input type="submit" value="Begin"></input>
+        </form>
+        <hr/>
+        <a href="HowToPlay.html" target="_blank"><button class="howToPlay">How To Play</button></a>
+        </div>
+
+        <!-- 4 Players form -->
+        <div id="fourPform" class="hideDiv">
+            
+            <form onsubmit="submitForm()">
+                <!-- Blue -->
+                <div class="nameInput">
+                    <img src="Images/dot_blue.png" width="50px" style="padding: 5px;"></img>
+                    <div>
+                        <label for="bpName">Blue player's name:</label><hr/>
+                        <input type="text" id="bpName" name="bpName" maxlength="26" value="Blue's clues" required><br/>
+                    </div>
+                </div>
+                <!-- Red -->
+                <div class="nameInput">
+                    <img src="Images/dot_red.png" width="50px" style="padding: 5px;"></img>
+                    <div>
+                        <label for="rpName">Red players's name:</label><hr/>
+                        <input type="text" id="rpName" name="rpName" maxlength="26" value="Little red riding hood" required><br/>
+                    </div>
+                </div>
+                <!-- Yellow -->
+                <div class="nameInput">
+                    <img src="Images/dot_yellow.png" width="50px" style="padding: 5px;"></img>
+                    <div>
+                        <label for="ypName">Yellow players's name:</label><hr/>
+                        <input type="text" id="ypName" name="ypName" maxlength="26" value="The Yellow Flash" required><br/>
+                    </div>
+                </div>
+                <!-- Green -->
+                <div class="nameInput">
+                    <img src="Images/dot_green.png" width="50px" style="padding: 5px;"></img>
+                    <div>
+                        <label for="gpName">Green players's name:</label><hr/>
+                        <input type="text" id="gpName" name="gpName" maxlength="26" value="Go Green" required><br/>
+                    </div>
+                </div>
+                <input type="submit" value="Begin"></input>
+            </form>
+            <hr/>
+            <a href="HowToPlay.html" target="_blank"><button class="howToPlay">How To Play</button></a>
+            </div>
+    
+    </div>
+    <!-- This div contains the game board -->
+    <div class="hideDiv" id="gameDiv">
+    </div>
+
+    <!-- To display player name for every turn -->
+    <div id="playerName" class="hideDiv">
+        <h1 id="pname"></h1>
+        <hr/>
+        <a href="HowToPlay.html" target="_blank"><button class="howToPlay">How To Play</button></a>
+    </div>
+
+    <!-- To display the winner's names after the match is over -->
+    <div id="winDiv" class="hideDiv">
+        <h1 id="winnerName"></h1>
+        <hr>
+        <a href=" " target="_parent"><button class="howToPlay">Play Again</button></a>
+    </div>
+    <script src="otrio.js"></script>
+</body>
+</html>
