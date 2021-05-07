@@ -144,3 +144,18 @@ input[type='submit'] {
     font-size: 20px;
     -webkit-text-stroke: 0.05px white;
 }
+@media only screen and (max-width: 500px) {
+    #board {
+        width: 90vw;
+        height: 90vw;
+    }
+    #rules {
+        width: 99vw;
+    }
+    #rules li{
+        font-size: 15px;
+    }
+    .box {
+        padding: 1vw;
+    }
+}
